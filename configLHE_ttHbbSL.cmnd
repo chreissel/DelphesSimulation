@@ -1,0 +1,67 @@
+! 1) Settings used in the main program.
+
+Main:numberOfEvents = 100         ! number of events to generate
+Main:timesAllowErrors = 3          ! how many aborts before run stops
+
+! 2) Settings related to output in init(), next() and stat().
+
+Init:showChangedSettings = on      ! list changed settings
+Init:showChangedParticleData = off ! list changed particle data
+Next:numberCount = 100             ! print message every n events
+Next:numberShowInfo = 1            ! print event information n times
+Next:numberShowProcess = 1         ! print process record n times
+Next:numberShowEvent = 0           ! print event record n times
+
+! 3) Set the input LHE file
+
+Beams:frameType = 4
+Beams:LHEF = cmsgrid_final.lhe
+
+! 4) Parameters from  https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/HIG-RunIIFall17wmLHEGS-00043
+
+POWHEG:nFinal = 3
+23:mMin = 0.05
+24:mMin = 0.05
+25:m0 = 125.0
+25:onMode = off
+25:onIfMatch = 5 -5       ! Higgs decays only to bb pair
+
+!Tune:pp 14
+!Tune:ee 7
+!MultipartonInteractions:ecmPow=0.03344
+!PDF:pSet=20
+!MultipartonInteractions:bProfile=2
+!MultipartonInteractions:pT0Ref=1.41
+!MultipartonInteractions:coreRadius=0.7634
+!MultipartonInteractions:coreFraction=0.63
+!ColourReconnection:range=5.176
+!SigmaTotal:zeroAXB=off
+!
+!SpaceShower:alphaSorder=2
+!SpaceShower:alphaSvalue=0.118
+!SigmaProcess:alphaSvalue=0.118
+!SigmaProcess:alphaSorder=2
+!MultipartonInteractions:alphaSvalue=0.118
+!MultipartonInteractions:alphaSorder=2
+!TimeShower:alphaSorder=2
+!TimeShower:alphaSvalue=0.118
+!Tune:preferLHAPDF = 2
+!Main:timesAllowErrors = 10000
+!Check:epTolErr = 0.01
+!! Beams:setProductionScalesFromLHEF = off
+!
+!
+!SLHA:keepSM = on
+!SLHA:minMassSM = 1000.
+!
+!ParticleDecays:limitTau0 = on
+!ParticleDecays:tau0Max = 10
+!ParticleDecays:allowPhotonRadiation = on
+!POWHEG:veto = 1
+!POWHEG:pTdef = 1
+!POWHEG:emitted = 0
+!POWHEG:pTemt = 0
+!POWHEG:pThard = 0
+!POWHEG:vetoCount = 100
+!SpaceShower:pTmaxMatch = 2
+!TimeShower:pTmaxMatch = 2
